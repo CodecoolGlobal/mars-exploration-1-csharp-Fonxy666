@@ -1,7 +1,5 @@
-using System.Collections;
 using Codecool.MarsExploration.Configuration.Model;
 using Codecool.MarsExploration.Configuration.Service;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 
 namespace MarsExplorationTest;
 

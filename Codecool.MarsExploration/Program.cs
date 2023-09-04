@@ -1,4 +1,5 @@
-﻿using Codecool.MarsExploration.Calculators.Service;
+﻿using Codecool.MarsExploration.Calculators.Model;
+using Codecool.MarsExploration.Calculators.Service;
 using Codecool.MarsExploration.Configuration.Model;
 using Codecool.MarsExploration.Configuration.Service;
 using Codecool.MarsExploration.MapElements.Service.Builder;
@@ -16,8 +17,8 @@ internal class Program
         Console.WriteLine("Mars Exploration Sprint 1");
         var mapConfig = GetConfiguration();
 
-        IDimensionCalculator dimensionCalculator = null;
-        ICoordinateCalculator coordinateCalculator = null;
+        IDimensionCalculator dimensionCalculator = new DimensionCalculator();
+        ICoordinateCalculator coordinateCalculator = new CoordinateCalculator();
 
         IMapElementBuilder mapElementFactory = null;
         IMapElementsGenerator mapElementsGenerator = null;
@@ -29,11 +30,9 @@ internal class Program
         MapElementConfigurationValidator mapElementConfigurationValidator = new MapElementConfigurationValidator();
 
         CreateAndWriteMaps(3, mapGenerator, mapConfig);
-
-        Console.WriteLine($"Test: {mapElementConfigurationValidator.Validate(GetConfiguration())}");
-
+        
         Console.WriteLine("Mars maps successfully generated.");
-        Console.ReadKey();
+        /*Console.ReadKey();*/
     }
 
     private static void CreateAndWriteMaps(int count, IMapGenerator mapGenerator, MapConfiguration mapConfig)
