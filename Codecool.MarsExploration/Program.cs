@@ -26,8 +26,11 @@ internal class Program
         IMapElementPlacer mapElementPlacer = null;
 
         IMapGenerator mapGenerator = null;
+        MapElementConfigurationValidator mapElementConfigurationValidator = new MapElementConfigurationValidator();
 
         CreateAndWriteMaps(3, mapGenerator, mapConfig);
+
+        Console.WriteLine($"Test: {mapElementConfigurationValidator.Validate(GetConfiguration())}");
 
         Console.WriteLine("Mars maps successfully generated.");
         Console.ReadKey();
@@ -49,8 +52,24 @@ internal class Program
             new ElementToSize(2, 20),
             new ElementToSize(1, 30),
         }, 3);
+        
+        var pitsCfg = new MapElementConfiguration(pitSymbol, "pit", new[]
+        {
+            new ElementToSize(2, 10),
+            new ElementToSize(1, 20),
+        }, 10);
+        
+        var mineralsCfg = new MapElementConfiguration(mineralSymbol, "mineral", new[]
+        {
+            new ElementToSize(10, 1)
+        }, 0, "#");
+        
+        var watersCfg = new MapElementConfiguration(waterSymbol, "water", new[]
+        {
+            new ElementToSize(10, 1)
+        }, 0, "&");
 
-        List<MapElementConfiguration> elementsCfg = new() { mountainsCfg };
+        List<MapElementConfiguration> elementsCfg = new() { mountainsCfg, pitsCfg, mineralsCfg, watersCfg };
         return new MapConfiguration(1000, 0.5, elementsCfg);
     }
 }
