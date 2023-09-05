@@ -20,7 +20,7 @@ internal class Program
         ICoordinateCalculator coordinateCalculator = new CoordinateCalculator();
 
         IMapElementBuilder mapElementFactory = new MapElementBuilder();
-        IMapElementsGenerator mapElementsGenerator = null;
+        IMapElementsGenerator mapElementsGenerator = new MapElementGenerator();
 
         IMapConfigurationValidator mapConfigValidator = null;
         IMapElementPlacer mapElementPlacer = null;
@@ -28,6 +28,12 @@ internal class Program
         IMapGenerator mapGenerator = null;
         MapElementConfigurationValidator mapElementConfigurationValidator = new MapElementConfigurationValidator();
 
+        var elementList = mapElementsGenerator.CreateAll(mapConfig);
+        foreach (var each in elementList)
+        {
+            Console.WriteLine($"{each}\n");
+        }
+        
         CreateAndWriteMaps(3, mapGenerator, mapConfig);
         
         Console.WriteLine("Mars maps successfully generated.");

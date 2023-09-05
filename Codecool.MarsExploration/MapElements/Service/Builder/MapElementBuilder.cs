@@ -10,12 +10,12 @@ public class MapElementBuilder : IMapElementBuilder
         DimensionCalculator dimensionCalculator = new DimensionCalculator();
         CoordinateCalculator coordinateCalculator = new CoordinateCalculator();
         
-        var actualMapSize = dimensionCalculator.CalculateDimension(size, dimensionGrowth);
-        string[,] representation = new string[actualMapSize,actualMapSize];
+        var actualBuildSize = dimensionCalculator.CalculateDimension(size, dimensionGrowth);
+        string[,] representation = new string[actualBuildSize,actualBuildSize];
 
-        for (int i = 0; i < actualMapSize; i++)
+        for (int i = 0; i < actualBuildSize; i++)
         {
-            for (int j = 0; j < actualMapSize; j++)
+            for (int j = 0; j < actualBuildSize; j++)
             {
                 representation[i, j] = " ";
             }
@@ -23,8 +23,8 @@ public class MapElementBuilder : IMapElementBuilder
         
         while (size > 0)
         {
-            var randomCoordinate = coordinateCalculator.GetRandomCoordinate(actualMapSize);
-
+            var randomCoordinate = coordinateCalculator.GetRandomCoordinate(actualBuildSize);
+            
             if (representation[randomCoordinate.X, randomCoordinate.Y] == " ")
             {
                 representation[randomCoordinate.X, randomCoordinate.Y] = symbol;
@@ -32,7 +32,7 @@ public class MapElementBuilder : IMapElementBuilder
             }
         }
         
-        MapElement build = new MapElement(representation, name, actualMapSize, preferredLocationSymbol);
+        MapElement build = new MapElement(representation, name, actualBuildSize, preferredLocationSymbol);
         
         return build;
     }
