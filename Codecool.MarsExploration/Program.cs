@@ -1,11 +1,10 @@
-﻿using Codecool.MarsExploration.Calculators.Model;
-using Codecool.MarsExploration.Calculators.Service;
+﻿using Codecool.MarsExploration.Calculators.Service;
 using Codecool.MarsExploration.Configuration.Model;
 using Codecool.MarsExploration.Configuration.Service;
+using Codecool.MarsExploration.MapElements.Model;
 using Codecool.MarsExploration.MapElements.Service.Builder;
 using Codecool.MarsExploration.MapElements.Service.Generator;
 using Codecool.MarsExploration.MapElements.Service.Placer;
-using Codecool.MarsExploration.Output.Service;
 
 internal class Program
 {
@@ -20,7 +19,7 @@ internal class Program
         IDimensionCalculator dimensionCalculator = new DimensionCalculator();
         ICoordinateCalculator coordinateCalculator = new CoordinateCalculator();
 
-        IMapElementBuilder mapElementFactory = null;
+        IMapElementBuilder mapElementFactory = new MapElementBuilder();
         IMapElementsGenerator mapElementsGenerator = null;
 
         IMapConfigurationValidator mapConfigValidator = null;

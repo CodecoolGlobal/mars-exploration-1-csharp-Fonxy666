@@ -3984,19 +3984,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vikto\\.nuget\\packages\\": {}
+    "C:\\Users\\just1\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vikto\\Documents\\Codecool\\oop module\\si week\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj",
+      "projectUniqueName": "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj",
       "projectName": "MarsExplorationTest",
-      "projectPath": "C:\\Users\\vikto\\Documents\\Codecool\\oop module\\si week\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj",
-      "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vikto\\Documents\\Codecool\\oop module\\si week\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\obj\\",
+      "projectPath": "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj",
+      "packagesPath": "C:\\Users\\just1\\.nuget\\packages\\",
+      "outputPath": "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\just1\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -4008,8 +4008,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\vikto\\Documents\\Codecool\\oop module\\si week\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj": {
-              "projectPath": "C:\\Users\\vikto\\Documents\\Codecool\\oop module\\si week\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj"
+            "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj": {
+              "projectPath": "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj"
             }
           }
         }
