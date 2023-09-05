@@ -28,7 +28,7 @@ internal class Program
         IMapGenerator mapGenerator = null;
 
         var list = mapElementsGenerator.CreateAll(mapConfig);
-        string[,] map = new string[10, 10];
+        string[,] map = new string[100, 100];
         
         for (int i = 0; i < map.GetLength(0); i++)
         {
@@ -40,14 +40,39 @@ internal class Program
         
         foreach (var element in list)
         {
-            while (true)
+            bool elementPlaced = false;
+            while (!elementPlaced)
             {
-                var newCoord = coordinateCalculator.GetRandomCoordinate(map.GetLength(0));
-                if (mapElementPlacer.CanPlaceElement(element, map, newCoord))
+                //Console.WriteLine(element.PreferredLocationSymbol);
+                
+                if (element.PreferredLocationSymbol != null)
                 {
-                    mapElementPlacer.PlaceElement(element, map, newCoord);
-                    break;
+                    var newCoord = coordinateCalculator.GetRandomCoordinate(map.GetLength(0));
+                    if (map[newCoord.X, newCoord.Y] == element.PreferredLocationSymbol)
+                    {
+                        var adjacentCoordinates = coordinateCalculator.GetAdjacentCoordinates(newCoord, element.Dimension);
+                        foreach (var adjacentCoordinate in adjacentCoordinates)
+                        {
+                            if (mapElementPlacer.CanPlaceElement(element, map, adjacentCoordinate))
+                            {
+                                //Console.WriteLine($"{element.Name}: {newCoord.X}, {newCoord.Y} || dimension:{element.Dimension}");
+                                mapElementPlacer.PlaceElement(element, map, adjacentCoordinate);
+                                elementPlaced = true;
+                            }
+                        }
+                    }
                 }
+                else
+                {
+                    var newCoord = coordinateCalculator.GetRandomCoordinate(map.GetLength(0));
+                    if (mapElementPlacer.CanPlaceElement(element, map, newCoord))
+                    {
+                        //Console.WriteLine($"{element.Name}: {newCoord.X}, {newCoord.Y} || dimension:{element.Dimension}");
+                        mapElementPlacer.PlaceElement(element, map, newCoord);
+                        elementPlaced = true;
+                    }
+                }
+                
             }
         }
         
@@ -69,7 +94,7 @@ internal class Program
     private static MapConfiguration GetConfiguration()
     {
         const string mountainSymbol = "#";
-        const string pitSymbol = "&";
+        const string pitSymbol = "&"; 
         const string mineralSymbol = "%";
         const string waterSymbol = "*";
 

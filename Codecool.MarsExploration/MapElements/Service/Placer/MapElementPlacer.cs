@@ -30,7 +30,7 @@ public class MapElementPlacer : IMapElementPlacer
 
     public void PlaceElement(MapElement element, string?[,] map, Coordinate coordinate)
     {
-        Console.WriteLine($"{coordinate.X}, {coordinate.Y}");
+        
 
         int vertical = coordinate.X + element.Dimension;
         int horizontal = coordinate.Y + element.Dimension;

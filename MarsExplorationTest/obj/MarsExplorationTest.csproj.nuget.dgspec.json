@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj": {}
+    "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj": {}
   },
   "projects": {
-    "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj": {
+    "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj",
+        "projectUniqueName": "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj",
         "projectName": "Codecool.MarsExploration",
-        "projectPath": "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj",
-        "packagesPath": "C:\\Users\\just1\\.nuget\\packages\\",
-        "outputPath": "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\obj\\",
+        "projectPath": "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj",
+        "packagesPath": "C:\\Users\\sweepy\\.nuget\\packages\\",
+        "outputPath": "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\just1\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\sweepy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,34 +55,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.412\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj": {
+    "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj",
+        "projectUniqueName": "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj",
         "projectName": "MarsExplorationTest",
-        "projectPath": "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj",
-        "packagesPath": "C:\\Users\\just1\\.nuget\\packages\\",
-        "outputPath": "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\obj\\",
+        "projectPath": "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj",
+        "packagesPath": "C:\\Users\\sweepy\\.nuget\\packages\\",
+        "outputPath": "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\just1\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\sweepy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj": {
-                "projectPath": "D:\\Programozás\\Git C#\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj"
+              "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj": {
+                "projectPath": "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj"
               }
             }
           }
@@ -132,7 +136,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.412\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -17,8 +17,9 @@ public record Map(string?[,] Representation, bool SuccessfullyGenerated = false)
 
             representation += "\n";
         }
+
         
-        return representation.Trim();
+        return representation.Substring(0, representation.Length - 1);
     }
 
     public override string ToString()
