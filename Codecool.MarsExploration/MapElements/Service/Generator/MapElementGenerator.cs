@@ -29,14 +29,3 @@ public class MapElementGenerator : IMapElementsGenerator
         return mapElements;
     }
 }
-
-/*
-public record MapConfiguration(
-    int MapSize,
-    double ElementToSpaceRatio,
-    IEnumerable<MapElementConfiguration> MapElementConfigurations);
-    
-public MapElement Build(int size, string symbol, string name, int dimensionGrowth, string? preferredLocationSymbol = null)
-
-public record MapElement(string?[,] Representation, string Name, int Dimension, string? PreferredLocationSymbol = null) : Map(Representation)
-*/

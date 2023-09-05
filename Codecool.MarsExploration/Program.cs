@@ -22,17 +22,39 @@ internal class Program
         IMapElementBuilder mapElementFactory = new MapElementBuilder();
         IMapElementsGenerator mapElementsGenerator = new MapElementGenerator();
 
-        IMapConfigurationValidator mapConfigValidator = null;
-        IMapElementPlacer mapElementPlacer = null;
+        IMapConfigurationValidator mapConfigValidator = new MapElementConfigurationValidator();
+        IMapElementPlacer mapElementPlacer = new MapElementPlacer();
 
         IMapGenerator mapGenerator = null;
-        MapElementConfigurationValidator mapElementConfigurationValidator = new MapElementConfigurationValidator();
 
-        var elementList = mapElementsGenerator.CreateAll(mapConfig);
-        foreach (var each in elementList)
+        var list = mapElementsGenerator.CreateAll(mapConfig);
+        string[,] map = new string[10, 10];
+        
+        for (int i = 0; i < map.GetLength(0); i++)
         {
-            Console.WriteLine($"{each}\n");
+            for (int j = 0; j < map.GetLength(0); j++)
+            {
+                map[i, j] = " ";
+            }
         }
+        
+        foreach (var element in list)
+        {
+            while (true)
+            {
+                var newCoord = coordinateCalculator.GetRandomCoordinate(map.GetLength(0));
+                if (mapElementPlacer.CanPlaceElement(element, map, newCoord))
+                {
+                    mapElementPlacer.PlaceElement(element, map, newCoord);
+                    break;
+                }
+            }
+        }
+        
+        Map mapped = new Map(map);
+
+        Console.WriteLine("Map:");
+        Console.WriteLine(mapped.ToString());
         
         CreateAndWriteMaps(3, mapGenerator, mapConfig);
         
