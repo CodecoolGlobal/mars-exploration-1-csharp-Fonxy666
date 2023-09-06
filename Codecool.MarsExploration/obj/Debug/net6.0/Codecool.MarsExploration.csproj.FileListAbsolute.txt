@@ -12,3 +12,18 @@ E:\student_stuff\csharp\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExplorat
 E:\student_stuff\csharp\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\obj\Debug\net6.0\Codecool.MarsExploration.pdb
 E:\student_stuff\csharp\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\obj\Debug\net6.0\Codecool.MarsExploration.genruntimeconfig.cache
 E:\student_stuff\csharp\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\obj\Debug\net6.0\ref\Codecool.MarsExploration.dll
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\bin\Debug\net6.0\Codecool.MarsExploration.exe
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\bin\Debug\net6.0\Codecool.MarsExploration.deps.json
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\bin\Debug\net6.0\Codecool.MarsExploration.runtimeconfig.json
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\bin\Debug\net6.0\Codecool.MarsExploration.dll
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\bin\Debug\net6.0\Codecool.MarsExploration.pdb
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\obj\Debug\net6.0\Codecool.MarsExploration.csproj.AssemblyReference.cache
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\obj\Debug\net6.0\Codecool.MarsExploration.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\obj\Debug\net6.0\Codecool.MarsExploration.AssemblyInfoInputs.cache
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\obj\Debug\net6.0\Codecool.MarsExploration.AssemblyInfo.cs
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\obj\Debug\net6.0\Codecool.MarsExploration.csproj.CoreCompileInputs.cache
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\obj\Debug\net6.0\Codecool.MarsExploration.dll
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\obj\Debug\net6.0\refint\Codecool.MarsExploration.dll
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\obj\Debug\net6.0\Codecool.MarsExploration.pdb
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\obj\Debug\net6.0\Codecool.MarsExploration.genruntimeconfig.cache
+C:\Users\vikto\Documents\Codecool\oop module\si week\mars-exploration-1-csharp-Fonxy666\Codecool.MarsExploration\obj\Debug\net6.0\ref\Codecool.MarsExploration.dll

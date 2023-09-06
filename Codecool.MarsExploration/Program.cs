@@ -72,7 +72,7 @@ internal class Program
         Console.WriteLine("Maps:");
         IMapGenerator mapGenerator = new MapGenerator();
         var mapConfig = GetConfiguration();
-        CreateAndWriteMaps(10, mapGenerator, mapConfig);
+        CreateAndWriteMaps(3, mapGenerator, mapConfig);
         
         Console.WriteLine("Mars maps successfully generated.");
         /*Console.ReadKey();*/
@@ -93,14 +93,15 @@ internal class Program
             }
             i++;
         }
-        
-        foreach (var map in maps)
-        {
-            Console.WriteLine(map);
-        }
 
-        
-        
+        for (var j = 0; j < maps.Count; j++)
+        {
+            Console.WriteLine(maps[j]);
+            var fileWriter = new[] { $"Map-{j+1} \n {maps[j]}" };
+            var filePath = Path.Combine(WorkDir, "Resources", $"Map-{j+1}.txt");
+            Directory.CreateDirectory(Path.GetDirectoryName(filePath) ?? string.Empty);
+            File.WriteAllLines(filePath, fileWriter);
+        }
     }
 
     private static MapConfiguration GetConfiguration()
