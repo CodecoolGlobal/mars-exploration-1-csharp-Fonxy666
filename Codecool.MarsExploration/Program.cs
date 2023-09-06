@@ -1,102 +1,41 @@
-﻿using Codecool.MarsExploration.Calculators.Service;
-using Codecool.MarsExploration.Configuration.Model;
-using Codecool.MarsExploration.Configuration.Service;
-using Codecool.MarsExploration.MapElements.Model;
-using Codecool.MarsExploration.MapElements.Service.Builder;
+﻿using Codecool.MarsExploration.Configuration.Model;
+using Codecool.MarsExploration.Configuration.Service.Logger;
 using Codecool.MarsExploration.MapElements.Service.Generator;
-using Codecool.MarsExploration.MapElements.Service.Placer;
 
 internal class Program
 {
-    //You can change this to any directory you like
     private static readonly string WorkDir = AppDomain.CurrentDomain.BaseDirectory;
+    private static readonly ILogger Logger = new Logger();
 
     public static void Main(string[] args)
     {
-        Console.WriteLine("Mars Exploration Sprint 1");
-        
+        Logger.LogInfo("Mars Exploration Sprint 1");
 
-       
-    /*
-        var list = mapElementsGenerator.CreateAll(mapConfig);
-        string[,] map = new string[100, 100];
-        
-        for (int i = 0; i < map.GetLength(0); i++)
-        {
-            for (int j = 0; j < map.GetLength(0); j++)
-            {
-                map[i, j] = " ";
-            }
-        }
-        
-        foreach (var element in list)
-        {
-            bool elementPlaced = false;
-            while (!elementPlaced)
-            {
-                //Console.WriteLine(element.PreferredLocationSymbol);
-                
-                if (element.PreferredLocationSymbol != null)
-                {
-                    var newCoord = coordinateCalculator.GetRandomCoordinate(map.GetLength(0));
-                    if (map[newCoord.X, newCoord.Y] == element.PreferredLocationSymbol)
-                    {
-                        var adjacentCoordinates = coordinateCalculator.GetAdjacentCoordinates(newCoord, element.Dimension);
-                        foreach (var adjacentCoordinate in adjacentCoordinates)
-                        {
-                            if (mapElementPlacer.CanPlaceElement(element, map, adjacentCoordinate))
-                            {
-                                //Console.WriteLine($"{element.Name}: {newCoord.X}, {newCoord.Y} || dimension:{element.Dimension}");
-                                mapElementPlacer.PlaceElement(element, map, adjacentCoordinate);
-                                elementPlaced = true;
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    var newCoord = coordinateCalculator.GetRandomCoordinate(map.GetLength(0));
-                    if (mapElementPlacer.CanPlaceElement(element, map, newCoord))
-                    {
-                        //Console.WriteLine($"{element.Name}: {newCoord.X}, {newCoord.Y} || dimension:{element.Dimension}");
-                        mapElementPlacer.PlaceElement(element, map, newCoord);
-                        elementPlaced = true;
-                    }
-                }
-                
-            }
-        }
-        
-        Map mapped = new Map(map);
-        */
-        Console.WriteLine("Maps:");
         IMapGenerator mapGenerator = new MapGenerator();
         var mapConfig = GetConfiguration();
         CreateAndWriteMaps(3, mapGenerator, mapConfig);
         
-        Console.WriteLine("Mars maps successfully generated.");
-        /*Console.ReadKey();*/
+        Logger.LogSuccessful("Mars maps successfully generated.");
     }
 
     private static void CreateAndWriteMaps(int count, IMapGenerator mapGenerator, MapConfiguration mapConfig)
     {
-        List<string> maps = new List<string>();
+        var maps = new List<string>();
         var i = 1;
-        while (maps.Count() != count)
+        while (maps.Count != count)
         {
-            Console.WriteLine($"Map #{i}");
+            Logger.LogInfo($"#{i}. tried to generate: ");
             var finishedMap = mapGenerator.Generate(mapConfig);
             if (finishedMap.SuccessfullyGenerated)
             {
+                Logger.LogSuccessful("Successfully generated!");
                 maps.Add(finishedMap.ToString());
-                Console.WriteLine("Successfully generated!");
             }
             i++;
         }
 
         for (var j = 0; j < maps.Count; j++)
         {
-            Console.WriteLine(maps[j]);
             var fileWriter = new[] { $"Map-{j+1} \n {maps[j]}" };
             var filePath = Path.Combine(WorkDir, "Resources", $"Map-{j+1}.txt");
             Directory.CreateDirectory(Path.GetDirectoryName(filePath) ?? string.Empty);

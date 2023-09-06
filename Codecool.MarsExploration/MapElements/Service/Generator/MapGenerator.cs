@@ -1,5 +1,6 @@
 using Codecool.MarsExploration.Calculators.Service;
 using Codecool.MarsExploration.Configuration.Model;
+using Codecool.MarsExploration.Configuration.Service.Logger;
 using Codecool.MarsExploration.MapElements.Model;
 using Codecool.MarsExploration.MapElements.Service.Placer;
 
@@ -12,20 +13,23 @@ public class MapGenerator : IMapGenerator
         IMapElementsGenerator mapElementsGenerator = new MapElementGenerator();
         ICoordinateCalculator coordinateCalculator = new CoordinateCalculator();
         IMapElementPlacer mapElementPlacer = new MapElementPlacer();
+        ILogger logger = new Logger();
+        
         var elementList = mapElementsGenerator.CreateAll(mapConfig).ToList();
-        int dimension = (int)Math.Floor(Math.Sqrt(mapConfig.MapSize));
-
-        string[,] map = new string[dimension, dimension];
+        var dimension = (int)Math.Floor(Math.Sqrt(mapConfig.MapSize));
+        
+        var map = new string[dimension, dimension];
         map = MapCleaner(map);
 
         var buildCounter = 0;
-        for (int i = 0; i < elementList.Count(); i++)
+        for (var i = 0; i < elementList.Count; i++)
         {
             if (buildCounter > 10)
             {
-                Console.WriteLine("Map wasn't generated!");
+                logger.LogError("Map wasn't generated!");
                 return new Map(map, false);
             }
+            
             switch (elementList[i].PreferredLocationSymbol)
             {
                 case null:
@@ -40,14 +44,13 @@ public class MapGenerator : IMapGenerator
                         }
 
                         var randomCoordinate = coordinateCalculator.GetRandomCoordinate(map.GetLength(0));
+                        
                         if (!mapElementPlacer.CanPlaceElement(elementList[i], map, randomCoordinate)) continue;
-                        //Console.WriteLine($"{mapElement.Name}: {randomCoordinate.X}, {randomCoordinate.Y} || dimension:{mapElement.Dimension}");
                         mapElementPlacer.PlaceElement(elementList[i], map, randomCoordinate);
                         break;
-                       
                     }
-                    
                     break;
+                
                 case "#":
                 case "&":
                     for (int j = 0; j < 1000; j++)
@@ -61,7 +64,6 @@ public class MapGenerator : IMapGenerator
                         }
                         var randomAdjacentCoordinate = coordinateCalculator.GetRandomAdjacentCoordinate(map, elementList[i].PreferredLocationSymbol);
                         if (!mapElementPlacer.CanPlaceElement(elementList[i], map, randomAdjacentCoordinate)) continue;
-                        //Console.WriteLine($"{mapElement.Name}: {randomAdjacentCoordinate.X}, {randomAdjacentCoordinate.Y} || dimension:{mapElement.Dimension}");
                         mapElementPlacer.PlaceElement(elementList[i], map, randomAdjacentCoordinate);
                         break;
                     }
@@ -87,10 +89,3 @@ public class MapGenerator : IMapGenerator
     }
     
 }
-
-/*
-public record MapConfiguration(
-    int MapSize,
-    double ElementToSpaceRatio,
-    IEnumerable<MapElementConfiguration> MapElementConfigurations);
-*/
