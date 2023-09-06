@@ -80,12 +80,25 @@ internal class Program
 
     private static void CreateAndWriteMaps(int count, IMapGenerator mapGenerator, MapConfiguration mapConfig)
     {
-        for (int i = 0; i < count; i++)
+        List<string> maps = new List<string>();
+        var i = 1;
+        while (maps.Count() != count)
         {
-            Console.WriteLine($"Map #{i+1}");
+            Console.WriteLine($"Map #{i}");
             var finishedMap = mapGenerator.Generate(mapConfig);
-            Console.WriteLine(finishedMap.ToString() + "\n");
+            if (finishedMap.SuccessfullyGenerated)
+            {
+                maps.Add(finishedMap.ToString());
+                Console.WriteLine("Successfully generated!");
+            }
+            i++;
         }
+        
+        foreach (var map in maps)
+        {
+            Console.WriteLine(map);
+        }
+
         
         
     }
@@ -120,6 +133,6 @@ internal class Program
         }, 0, "&");
 
         List<MapElementConfiguration> elementsCfg = new() { mountainsCfg, pitsCfg, mineralsCfg, watersCfg };
-        return new MapConfiguration(3000, 0.5, elementsCfg);
+        return new MapConfiguration(1200, 0.5, elementsCfg);
     }
 }

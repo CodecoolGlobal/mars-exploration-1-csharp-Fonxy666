@@ -63,14 +63,6 @@ public class CoordinateCalculator : ICoordinateCalculator
         {
             for (int j = 0; j < dimension; j++)
             {
-                /*
-                while (mapRepresentation[i,j] != symbol)
-                {
-                    coordinates.AddRange(GetAdjacentCoordinates(new Coordinate(i, j), dimension));
-                    
-                }
-                */
-
                 if (mapRepresentation[i, j] == symbol)
                 {
                     coordinates.Add(new Coordinate(i,j));
