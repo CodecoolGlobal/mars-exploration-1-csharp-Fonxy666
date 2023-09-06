@@ -1,6 +1,7 @@
 ﻿using Codecool.MarsExploration.Configuration.Model;
 using Codecool.MarsExploration.Configuration.Service.Logger;
 using Codecool.MarsExploration.MapElements.Service.Generator;
+using Codecool.MarsExploration.Output.Service;
 
 internal class Program
 {
@@ -13,9 +14,9 @@ internal class Program
 
         IMapGenerator mapGenerator = new MapGenerator();
         var mapConfig = GetConfiguration();
+
         CreateAndWriteMaps(3, mapGenerator, mapConfig);
         
-        Logger.LogSuccessful("Mars maps successfully generated.");
     }
 
     private static void CreateAndWriteMaps(int count, IMapGenerator mapGenerator, MapConfiguration mapConfig)
@@ -34,13 +35,17 @@ internal class Program
             i++;
         }
 
+        Console.WriteLine();
+        Logger.LogSuccessful("Mars maps successfully generated.");
+        Console.WriteLine();
+
+        var mapWriter = new MapFileWriter();
         for (var j = 0; j < maps.Count; j++)
         {
-            var fileWriter = new[] { $"Map-{j+1} \n {maps[j]}" };
             var filePath = Path.Combine(WorkDir, "Resources", $"Map-{j+1}.txt");
-            Directory.CreateDirectory(Path.GetDirectoryName(filePath) ?? string.Empty);
-            File.WriteAllLines(filePath, fileWriter);
+            mapWriter.WriteMapFile(maps[j], filePath, j);
         }
+        
     }
 
     private static MapConfiguration GetConfiguration()

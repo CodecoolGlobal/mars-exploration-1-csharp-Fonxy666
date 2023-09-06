@@ -4,5 +4,5 @@ namespace Codecool.MarsExploration.Output.Service;
 
 public interface IMapFileWriter
 {
-    void WriteMapFile(Map map, string file);
+    public void WriteMapFile(string map, string file, int count);
 }

@@ -72,6 +72,6 @@ public class CoordinateCalculator : ICoordinateCalculator
 
         var randomAdjacentCoordinates = GetAdjacentCoordinates(coordinates, dimension).ToList();
         
-        return randomAdjacentCoordinates[_rnd.Next(0, randomAdjacentCoordinates.Count())];
+        return randomAdjacentCoordinates[_rnd.Next(0, randomAdjacentCoordinates.Count)];
     }
 }
