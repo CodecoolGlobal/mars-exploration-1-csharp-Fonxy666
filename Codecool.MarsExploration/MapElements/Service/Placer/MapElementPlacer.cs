@@ -22,6 +22,7 @@ public class MapElementPlacer : IMapElementPlacer
                 {
                     return false;
                 }
+                
             }
         }
 

@@ -14,19 +14,10 @@ internal class Program
     public static void Main(string[] args)
     {
         Console.WriteLine("Mars Exploration Sprint 1");
-        var mapConfig = GetConfiguration();
+        
 
-        IDimensionCalculator dimensionCalculator = new DimensionCalculator();
-        ICoordinateCalculator coordinateCalculator = new CoordinateCalculator();
-
-        IMapElementBuilder mapElementFactory = new MapElementBuilder();
-        IMapElementsGenerator mapElementsGenerator = new MapElementGenerator();
-
-        IMapConfigurationValidator mapConfigValidator = new MapElementConfigurationValidator();
-        IMapElementPlacer mapElementPlacer = new MapElementPlacer();
-
-        IMapGenerator mapGenerator = null;
-
+       
+    /*
         var list = mapElementsGenerator.CreateAll(mapConfig);
         string[,] map = new string[100, 100];
         
@@ -77,11 +68,11 @@ internal class Program
         }
         
         Map mapped = new Map(map);
-
-        Console.WriteLine("Map:");
-        Console.WriteLine(mapped.ToString());
-        
-        CreateAndWriteMaps(3, mapGenerator, mapConfig);
+        */
+        Console.WriteLine("Maps:");
+        IMapGenerator mapGenerator = new MapGenerator();
+        var mapConfig = GetConfiguration();
+        CreateAndWriteMaps(10, mapGenerator, mapConfig);
         
         Console.WriteLine("Mars maps successfully generated.");
         /*Console.ReadKey();*/
@@ -89,6 +80,14 @@ internal class Program
 
     private static void CreateAndWriteMaps(int count, IMapGenerator mapGenerator, MapConfiguration mapConfig)
     {
+        for (int i = 0; i < count; i++)
+        {
+            Console.WriteLine($"Map #{i+1}");
+            var finishedMap = mapGenerator.Generate(mapConfig);
+            Console.WriteLine(finishedMap.ToString() + "\n");
+        }
+        
+        
     }
 
     private static MapConfiguration GetConfiguration()
@@ -121,6 +120,6 @@ internal class Program
         }, 0, "&");
 
         List<MapElementConfiguration> elementsCfg = new() { mountainsCfg, pitsCfg, mineralsCfg, watersCfg };
-        return new MapConfiguration(1000, 0.5, elementsCfg);
+        return new MapConfiguration(3000, 0.5, elementsCfg);
     }
 }

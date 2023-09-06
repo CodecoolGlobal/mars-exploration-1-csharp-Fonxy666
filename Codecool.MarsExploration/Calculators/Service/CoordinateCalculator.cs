@@ -1,13 +1,14 @@
 using Codecool.MarsExploration.Calculators.Model;
+using Codecool.MarsExploration.MapElements.Model;
 
 namespace Codecool.MarsExploration.Calculators.Service;
 
 public class CoordinateCalculator : ICoordinateCalculator
 {
+    private Random _rnd = new Random();
     public Coordinate GetRandomCoordinate(int dimension)
     {
-        var rnd = new Random();
-        return new Coordinate(rnd.Next(0, dimension), rnd.Next(0, dimension));
+        return new Coordinate(_rnd.Next(0, dimension), _rnd.Next(0, dimension));
     }
 
     public IEnumerable<Coordinate> GetAdjacentCoordinates(Coordinate coordinate, int dimension)
@@ -52,5 +53,33 @@ public class CoordinateCalculator : ICoordinateCalculator
         }
 
         return newList;
+    }
+
+    public Coordinate GetRandomAdjacentCoordinate(string[,] mapRepresentation, string symbol)
+    {
+        List<Coordinate> coordinates = new List<Coordinate>();
+        var dimension = mapRepresentation.GetLength(0);
+        for (int i = 0; i < dimension; i++)
+        {
+            for (int j = 0; j < dimension; j++)
+            {
+                /*
+                while (mapRepresentation[i,j] != symbol)
+                {
+                    coordinates.AddRange(GetAdjacentCoordinates(new Coordinate(i, j), dimension));
+                    
+                }
+                */
+
+                if (mapRepresentation[i, j] == symbol)
+                {
+                    coordinates.Add(new Coordinate(i,j));
+                }
+            }
+        }
+
+        var randomAdjacentCoordinates = GetAdjacentCoordinates(coordinates, dimension).ToList();
+        
+        return randomAdjacentCoordinates[_rnd.Next(0, randomAdjacentCoordinates.Count())];
     }
 }
