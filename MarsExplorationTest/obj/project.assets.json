@@ -3984,32 +3984,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vikto\\.nuget\\packages\\": {}
+    "C:\\Users\\sweepy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vikto\\Documents\\Codecool\\oop module\\si week\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj",
+      "projectUniqueName": "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj",
       "projectName": "MarsExplorationTest",
-      "projectPath": "C:\\Users\\vikto\\Documents\\Codecool\\oop module\\si week\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj",
-      "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vikto\\Documents\\Codecool\\oop module\\si week\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\obj\\",
+      "projectPath": "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\MarsExplorationTest.csproj",
+      "packagesPath": "C:\\Users\\sweepy\\.nuget\\packages\\",
+      "outputPath": "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\MarsExplorationTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\sweepy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\vikto\\Documents\\Codecool\\oop module\\si week\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj": {
-              "projectPath": "C:\\Users\\vikto\\Documents\\Codecool\\oop module\\si week\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj"
+            "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj": {
+              "projectPath": "E:\\student_stuff\\csharp\\mars-exploration-1-csharp-Fonxy666\\Codecool.MarsExploration\\Codecool.MarsExploration.csproj"
             }
           }
         }
@@ -4061,7 +4063,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.412\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

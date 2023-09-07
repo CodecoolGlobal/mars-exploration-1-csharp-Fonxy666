@@ -14,7 +14,6 @@ public class CoordinateCalculator : ICoordinateCalculator
     public IEnumerable<Coordinate> GetAdjacentCoordinates(Coordinate coordinate, int dimension)
     {
         var adjacentCoordinates = new List<Coordinate>();
-
         var x = coordinate.X;
         var y = coordinate.Y;
         
@@ -36,7 +35,7 @@ public class CoordinateCalculator : ICoordinateCalculator
 
         return adjacentCoordinates;
     }
-
+    
     public IEnumerable<Coordinate> GetAdjacentCoordinates(IEnumerable<Coordinate> coordinates, int dimension)
     {
         var newList = new List<Coordinate>();
@@ -57,11 +56,11 @@ public class CoordinateCalculator : ICoordinateCalculator
 
     public Coordinate GetRandomAdjacentCoordinate(string[,] mapRepresentation, string symbol)
     {
-        List<Coordinate> coordinates = new List<Coordinate>();
+        var coordinates = new List<Coordinate>();
         var dimension = mapRepresentation.GetLength(0);
-        for (int i = 0; i < dimension; i++)
+        for (var i = 0; i < dimension; i++)
         {
-            for (int j = 0; j < dimension; j++)
+            for (var j = 0; j < dimension; j++)
             {
                 if (mapRepresentation[i, j] == symbol)
                 {
@@ -69,7 +68,6 @@ public class CoordinateCalculator : ICoordinateCalculator
                 }
             }
         }
-
         var randomAdjacentCoordinates = GetAdjacentCoordinates(coordinates, dimension).ToList();
         
         return randomAdjacentCoordinates[_rnd.Next(0, randomAdjacentCoordinates.Count)];

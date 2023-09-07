@@ -29,18 +29,15 @@ public class MapElementConfigurationValidator : IMapConfigurationValidator
                     if (mapConfigMapElementConfiguration.DimensionGrowth != 3)
                         return false;
                     break;
-
                 case "pit":
                     if (mapConfigMapElementConfiguration.DimensionGrowth != 10)
                         return false;
                     break;
-
                 case "mineral":
                 case "water":
                     if (mapConfigMapElementConfiguration.DimensionGrowth != 0)
                         return false;
                     break;
-                
                 default :
                     return false;
             }
